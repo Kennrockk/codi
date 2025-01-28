@@ -2,49 +2,95 @@
 <html lang="en">
 
 <head>
-      <meta charset="UTF-8">
-      <title>Añadir elementos con DOM</title>
-      <link rel="stylesheet" type="text/css" href="w3css/w3css.css">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Añadir elementos con DOM</title>
+  <link rel="stylesheet" type="text/css" href="../02_uso_frameworks/W3Css/css/w3css.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <style>
-            #texto_nuevo,
-            #borrar_nuevos {
-                  display: none;
-                  margin-bottom: 10px;
-            }
+  <style>
+    #texto_nuevo,
+    #borrar_nuevos {
+      display: none;
+    }
 
-            .show {
-                  display: block !important;
-            }
+    .show {
+      display: block !important;
+    }
 
-            .show_button {
-                  display: inline-block !important;
-            }
-      </style>
+    .show_button {
+      display: inline-block !important;
+    }
+  </style>
 
 </head>
 
 <body>
-      <div class="w3-container">
-            <h2>Clicka sobre el boton para añadir mas elementos a la lista</h2>
-            <ul id="lista" class="w3-ul w3-lime w3-hoverable">
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Consectetuer adipiscing elit</li>
-                  <li>Sed mattis enim vitae orci</li>
-                  <li>Phasellus libero</li>
-                  <li>Maecenas nisl arcu</li>
-            </ul>
+  <div class="w3-container">
+    <h2>Clicka sobre el boton para añadir mas elementos a la lista</h2>
+    <ul id="lista" class="w3-ul w3-lime w3-hoverable">
+      <li>Lorem ipsum dolor sit amet</li>
+      <li>Consectetuer adipiscing elit</li>
+      <li>Sed mattis enim vitae orci</li>
+      <li>Phasellus libero</li>
+      <li>Maecenas nisl arcu</li>
+    </ul>
 
-            <input type="text" class="" name="texto_nuevo" id="texto_nuevo" />
+    <input type="text" class="" name="texto_nuevo" id="texto_nuevo" />
 
-            <input id="more" type="button" class="w3-button w3-white w3-border" value="Añadir elemento" />
-            <input id="less" type="button" class="w3-button w3-white w3-border" value="Borrar elemento" />
+    <input id="more" type="button" class="w3-button w3-white w3-border" value="Añadir elemento" />
+    <input id="less" type="button" class="w3-button w3-white w3-border" value="Borrar elemento" />
 
-            <button id="borrar_nuevos">Borra todo lo nuevo</button>
-      </div>
-      
+    <button class="w3-button w3-white w3-border" id="borrar_nuevos">Borra todo lo nuevo</button>
+  </div>
 
+  <script>
+    let cont = 0; // Contador de elementos añadidos.
+    const more = document.querySelector('#more'); // Boton para añadir un nuevo elemento.
+    const less = document.querySelector('#less'); // Boton para borrar el ultimo elemento.
+    const texto_nuevo = document.querySelector('#texto_nuevo'); // Input para añadir nuevos elementos
+    const borrar_nuevos = document.querySelector('#borrar_nuevos'); // Boton para borrar todos los elementos añadidos
+
+    const creaElemento = () => { // Función para añadir un nuevo elemento
+      texto_nuevo.classList.toggle('show'); // Mostrar el input
+      texto_nuevo.focus(); // Poner el foco en el input
+      if (texto_nuevo.value.length > 0) { // Si el input tiene contenido
+        console.log(texto_nuevo); // Comprobar que el valor del input es correcto
+        let elem = document.createElement('li'); // Crear un elemento 
+        let content = document.createTextNode(texto_nuevo.value); // Crear un nodo de texto 
+        let lista = document.querySelector('#lista'); // Seleccionar el elemento donde se va a añadir el nuevo elemento
+
+        elem.appendChild(content); // Añadir el nodo de texto al elemento
+        lista.appendChild(elem); // Añadir el elemento a la lista
+        texto_nuevo.value = ''; // Limpiar el input
+        cont++; // Aumentar el contador
+      }
+      if (cont > 0 && cont < 2) { // Si hay mas de un elemento añadido
+        borrar_nuevos.classList.add('show_button'); // Mostrar el boton de borrar todos los elementos añadidos
+      }
+    };
+    const borraHijo = () => { // Función para borrar el ultimo elemento añadido
+      let list = document.getElementById('lista'); // Seleccionar la lista
+      if (cont > 0) { // Condición: si hay elementos añadidos
+        list.removeChild(list.lastChild); // Borrar el ultimo elemento añadido
+        cont--; // Disminuir el contador
+      }
+    };
+    less.addEventListener('click', borraHijo); // Borrar el ultimo elemento añadido
+    more.addEventListener('click', creaElemento); // Añadir un nuevo elemento
+
+    borrar_nuevos.addEventListener('click', () => { // Función borrar todos los elementos añadidos, se activa al hacer click en el boton
+      console.log('borro nuevos');
+      console.log(cont);
+      if (cont > 0) { // Condición: si hay elementos añadidos
+        let list = document.getElementById('lista'); // Seleccionar la lista
+        for (let y = cont; y > 0; y--) { // Condición: borrar todos los elementos añadidos ejecutando el bucle tantas veces como elementos añadidos hasta que el contador sea 0
+          list.removeChild(list.lastChild); // Borrar el ultimo elemento añadido
+        }
+        cont = 0; // Poner el contador a 0
+        borrar_nuevos.classList.remove('show_button'); // Ocultar el boton de borrar todos los elementos añadidos
+      }
+    })
+  </script>
 </body>
 
 </html>
