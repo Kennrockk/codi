@@ -1,0 +1,325 @@
+@import url(../fonts/fonts.css);
+:root {
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+
+  font-size: 16px;
+  line-height: 1.5rem;
+}
+*,
+*::before,
+*::after {
+  padding: 0px;
+  margin: 0px;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "amaranthbold", "arima_madurailight";
+}
+
+header {
+  font-family: "arima_madurailight";
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* height: 100px; */
+  z-index: 1000;
+  align-items: center;
+  background-color: rgba(55, 51, 51, 0.777);
+}
+.imgBackgroundTop {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+/* ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+nav {
+  padding-top: 2rem;
+}
+nav > ul a {
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  margin: 50px;
+}
+nav > ul a:hover {
+  color: white;
+  border-bottom: 5px solid white;
+  transition: all 0.2s ease;
+}
+nav > ul a.selected {
+  border-bottom: 5px solid white;
+} */
+
+/* body > div > main */
+main {
+  width: 80%;
+  margin: auto;
+  position: relative;
+  z-index: 500;
+  background-color: rgb(255, 255, 255);
+  margin-top: -10rem;
+}
+section {
+  width: 100%;
+  padding-top: 75px;
+  /* padding-left: 2rem;
+  padding-right: 2rem; */
+  background-color: rgb(255, 255, 255);
+}
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+h2 {
+  margin-bottom: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+p {
+  font-size: 20px;
+  font-family: "arima_madurailight";
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.direction2 > h3 {
+  padding: 0;
+}
+.direction2 > p {
+  padding: 0;
+}
+
+.imgt {
+  width: 300px;
+  height: 150px;
+  position: relative;
+}
+.order {
+  width: 300px;
+  height: 400px;
+}
+.blockimg {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.links {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.botonrrss {
+  width: auto;
+  display: flex;
+  position: static;
+  border-radius: 35px;
+  cursor: pointer;
+  border-color: transparent;
+  margin-bottom: 20px;
+}
+.botonrrss:hover {
+  box-shadow: 5px 5px 5px 0px black;
+  transition: all 0.4s ease;
+}
+aside {
+  width: 100%;
+}
+fieldset {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  border: none;
+  background-color: gainsboro;
+
+  justify-content: center;
+}
+form {
+  padding: 20px 20px 0px 20px;
+  background-color: gainsboro;
+}
+.form1 {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  border: none;
+}
+textarea {
+  width: 100%;
+  border: none;
+}
+.bton {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-right: 3px;
+}
+.btonsumb {
+  width: 80px;
+  height: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  margin: -10px 15px 15px 15px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+footer > p {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  position: absolute;
+  background-color: black;
+  color: white;
+  margin-top: -6rem;
+}
+.arriba {
+  width: 40px;
+  border-radius: 25px;
+  margin-left: 1rem;
+}
+.imgBackgroundEnd {
+  width: 100%;
+  height: 30rem;
+  margin-top: -10rem;
+}
+.vid {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+video {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+.imgproductos {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.imgt2 {
+  width: 300px;
+  height: 150px;
+  display: flex;
+  margin: 50px;
+  position: relative;
+}
+.direction {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.imgt3 {
+  width: 300px;
+  height: 150px;
+  margin-left: 40px;
+}
+.direction2 {
+  display: flex;
+  flex-direction: column;
+}
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: rgba(55, 51, 51, 0.777);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.show-menu {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: black;
+  display: none;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+}
+/* nav ul li a {
+}  es lo mismo que el código de abajo.*/
+#menu li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid transparent;
+  font-weight: 600;
+  line-height: 2rem;
+  padding: 0 2rem;
+}
+#menu li a:hover {
+  color: blanchedalmond;
+  /* background-color: black;*/
+  border-bottom: 2px solid blanchedalmond;
+  transition: all 0.3s ease;
+}
+nav ul#menu li a.selected {
+  color: white;
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .show-menu {
+    display: inline;
+    cursor: pointer;
+  }
+  ul {
+    display: none;
+    opacity: 0;
+  }
+  nav {
+    justify-content: flex-start;
+  }
+  input[type="checkbox"]:checked ~ ul {
+    margin-top: 1rem;
+    display: block;
+    opacity: 1;
+    animation: opacidad 2s ease;
+  }
+  @keyframes opacidad {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

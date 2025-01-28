@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Css con HTML</title>
+  <link rel="stylesheet" href="../CSS/indexStyle.css">
+  <style>
+    h3 {
+      color: brown;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Aprendiendo CSS</h1>
+    Cascading Style Sheets. <br>
+    Hojas de estilo en cascada
+  </header>
+  <h3 id="indice">Índice de contenidos</h3>
+  </header>
+
+  <nav>
+    <ul id="menu">
+      <li><a href="#basicos">Selectores básicos</a></li>
+      <li><a href="#avanzados">Selectores avanzados</a></li>
+      <li><a href="#jerarquia">Jerarquía en Css -Restricciones-</a></li>
+      <li><a href="box-model alumnes.html">Modelo de caja</a></li>
+      <li><a href="#reseteo">Resetear navegadores</a></li>
+      <li><a href="#position">Posicionamiento</a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+    </ul>
+  </nav>
+  <main>
+    <section>
+      <h3 id="basicos">Selectores básicos</h3>
+      <article>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime ipsum omnis ut vero vel earum impedit magni
+          natus quis voluptas doloribus, nisi ipsa, laboriosam rerum cumque suscipit nemo explicabo enim?</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus recusandae natus sed quidem quod
+          incidunt sit, dolores, odit dicta eum similique reprehenderit velit quis doloribus explicabo, eaque ab qui
+          quam!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa delectus, eius dolorum molestias veritatis id,
+          vel labore sapiente voluptates ad ducimus ex ipsum reiciendis eligendi beatae enim minus repellat eveniet.
+        </p>
+        <p class="parrafo2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At explicabo voluptatibus
+          asperiores.
+          Voluptatibus unde saepe exercitationem corrupti, temporibus similique nulla, maiores repudiandae veritatis
+          obcaecati consequatur rerum, dignissimos quod cumque ad! Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit. Tempore praesentium laudantium accusamus! Voluptate velit veritatis earum nam voluptatem. Cum
+          obcaecati,
+          ipsa alias laborum accusantium in facere illum numquam deserunt eos? Lorem ipsum dolor, sit amet consectetur
+          adipisicing elit. Dolore delectus id deserunt, a vero voluptate aliquid exercitationem sapiente, numquam
+          consequatur, earum nam natus suscipit? Cumque corrupti odit praesentium beatae quod!
+        </p>
+      </article>
+
+      <article>
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime ipsum omnis ut vero vel earum impedit magni
+          natus quis voluptas doloribus, nisi ipsa, laboriosam rerum cumque suscipit nemo explicabo enim?</p>
+
+        <p class="parrafo2 strong">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus recusandae natus sed
+          quidem
+          quod
+          incidunt sit, dolores, odit dicta eum similique reprehenderit velit quis doloribus explicabo, eaque ab qui
+          quam!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa delectus, eius dolorum molestias veritatis id,
+          vel labore sapiente voluptates ad ducimus ex ipsum reiciendis eligendi beatae enim minus repellat eveniet.
+        </p>
+
+        <p class="parrafo2 tipo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At explicabo voluptatibus
+          asperiores.
+          Voluptatibus unde saepe exercitationem corrupti, temporibus similique nulla, maiores repudiandae veritatis
+          obcaecati consequatur rerum, dignissimos quod cumque ad! Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit. Tempore praesentium laudantium accusamus! Voluptate velit veritatis earum nam voluptatem. Cum
+          obcaecati,
+          ipsa alias laborum accusantium in facere illum numquam deserunt eos? Lorem ipsum dolor, sit amet consectetur
+          adipisicing elit. Dolore delectus id deserunt, a vero voluptate aliquid exercitationem sapiente, numquam
+          consequatur, earum nam natus suscipit? Cumque corrupti odit praesentium beatae quod!
+        </p>
+        <small class="tipo">Con el mismo aspecto que los "párrafos-2"</small> <br />
+
+        <address class="tipo strong">Avenida Carlomagno, 12</address>
+
+        <a href="#indice">Ir arriba</a>
+      </article>
+    </section>
+    <section>
+      <h3 id="avanzados">Selectores avanzados</h3>
+      <article>
+        <h4>Selectores de hijos</h4>
+        <p>Hijos directos y descendientes</p>
+        <ul class="directos">
+          <li><strong>Primavera</strong></li>
+          <ul>
+            <li>op1</li>
+            <ul>
+              <li><strong>op1</strong></li>
+              <li>op2</li>
+              <li>op3</li>
+            </ul>
+            <li><strong>op2</strong></li>
+            <li>op3</li>
+          </ul>
+          <li><strong>Verano</strong></li>
+          <li><strong>Otoño</strong></li>
+          <li><strong>Invierno</strong></li>
+        </ul>
+      </article>
+      <hr />
+      <article>
+        <h4>Selectores de hermanos</h4>
+        <p>Hermanos directos</p>
+        <ul>
+          <li class="hermano-adjacente"><strong>Primavera</strong></li>
+          <li class="hermanos-general"><strong>Verano</strong></li>
+          <li><strong>Otoño</strong></li>
+          <li><strong>Invierno</strong></li>
+        </ul>
+      </article>
+      <hr />
+      <article>
+        <h4>Selectores de atributos</h4>
+        <nav class="atributos">
+          <ul>
+            <li><a href="https://dominio.com" target="_blank">Productos</a></li>
+            <li><a class="opcion" href="https://dominio.com">Nosotros</a></li>
+            <li><a href="https://dominio.com" target="_blank">Servicio técnico</a></li>
+            <li><a href="https://dominio.com" target="new">Contacto</a></li>
+            <li><a class="opcion" href="http://dominio.eu">Localización</a></li>
+          </ul>
+        </nav>
+      </article>
+
+    </section>
+    <hr />
+    <section>
+      <h3 class="color" id="jerarquia">Jerarquía en Css. -Resctricciones</h3>
+      <article>
+        <p style="padding-left: 100px;">Los navegadores aplican estilos a los documentos HTML por jerarquía basada en:
+        </p>
+        <ol>
+          <li>La cascada</li>
+          <li>La especificidad</li>
+          <li>La herencia</li>
+        </ol>
+        <p>La cascada es el procedimiento con el que un navegador aplica los estilos y el orden de importancia o
+          restricción es el siguiente:</p>
+        <ol>
+          <li>Origen del código</li>
+          <ul>
+            <li type="square">Reglas del User Agent</li>
+            <li type="square">Reglas del usuario</li>
+            <li type="square">Reglas del desarrolador</li>
+          </ul>
+          <br />
+          <li>La especificidad del selector</li>
+          <li>Orden de aparición</li>
+        </ol>
+        <p>La especificidad es la fuerza restrictiva o peso de un selector.</p>
+        <ul>
+          <li>Estilo en línea1</li>
+          <li>identificadores 0,1</li>
+          <li>Clases, atributos, pseudoclases 0,0,1</li>
+          <li>Etiquetas HTML 0,0,0,1</li>
+          <li>!important- Es el badass y pasa por encima de toda la jerarquía</li>
+        </ul>
+        <p>La herencia es la capacidad que tienen los elementos padre de hacer heredara sus hijos sus propiedades.
+          Valores inherit o heredados</p>
+      </article>
+
+    </section>
+    <hr />
+    <section>
+      <h3 id="reseteo">Resetear navegadores</h3>
+      <p>Ante la diferente interpretación de el aspecto de los elementos de HTML que utiliza cada navegador, nace la
+        necesidad de borrar o resetear todas estas propiedades nativas de los navegadores para dejar el control a los
+        desarrolladores. <br />
+        Existen en el mercado diversos archivos Css que funcionan como reseteadores estandard, como normalize.css o
+        reset.css. <br />
+        Para más información: ver indexStyle.css
+      </p>
+    </section>
+    <section>
+      <h3><a href="position">Posicionamiento</a></h3>
+      <ul>
+        <li><a href="positions/fixed.html">Fixed (fijo)</a>
+          <small>Comportamiento nativo de posicionamiento de todos los elementos HTML.</small>
+        </li>
+        <li><a class="desactivar" href="positions/static.html">Static (Estático)</a></li>
+        <li><a href="">Relative (Relativo)</a></li>
+        <li><a href="positions/absolute.html">Absolute (absoluto)</a></li>
+        <li><a href="">Sticky (adhesivo)</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>

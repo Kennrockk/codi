@@ -1,0 +1,57 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+
+  font-size: 16px;
+  line-height: 1.5rem;
+  background-color: rgb(205, 217, 173);
+}
+*,
+*::before,
+*::after,
+html {
+  margin: 0;
+  padding: 0;
+}
+main {
+  width: 80%;
+  margin: auto;
+  line-height: 1.5rem;
+  flex-direction: column;
+}
+h1 {
+  margin-bottom: 2rem;
+  text-align: right;
+  letter-spacing: 2rem;
+  background-color: rgb(201, 201, 143);
+  text-transform: uppercase;
+}
+h2 {
+  margin: 2rem 0 2rem;
+  background-color: rgb(165, 106, 42);
+  color: white;
+  clear: both;
+}
+main > img {
+  width: 200px;
+}
+.izquierda {
+  float: left;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+}
+.derecha {
+  float: right;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}
+.centrado {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+address {
+  margin-top: 3rem;
+  text-align: center;
+}

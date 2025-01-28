@@ -1,0 +1,165 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+
+  font-size: 16px;
+  line-height: 1.5rem;
+}
+*,
+*::before,
+*::after,
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 1.5rem;
+}
+header,
+main,
+footer {
+  margin-bottom: 2rem;
+}
+h1 {
+  font-size: 2.986rem;
+  line-height: 5rem;
+  text-align: center;
+}
+img {
+  max-width: 100%;
+}
+h3 {
+  font-size: 2.074rem;
+  line-height: 3rem;
+}
+p {
+  margin-bottom: 1.5rem;
+}
+
+.cambioCaja {
+  text-transform: lowercase;
+}
+.cambioCaja span {
+  text-transform: uppercase;
+}
+.contenedor {
+  background-color: rgb(218, 218, 178);
+  display: flex;
+  /*   flex-flow: column nowrap;
+  height: 600px; */
+}
+.elemento {
+  width: 100px;
+  height: 100px;
+  margin: 0.5rem;
+  background-color: rgb(165, 144, 42);
+}
+.contenedor2 {
+  background-color: rgb(218, 218, 178);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.element {
+  width: 100px;
+  height: 100px;
+  margin: 0.5rem;
+  background-color: rgb(99, 121, 20);
+  border-radius: 5px;
+}
+.contenedor3 {
+  background-color: rgb(218, 218, 178);
+  height: 200px;
+  display: flex;
+  flex-flow: row wrap;
+  /* align-items: stretch; */
+  overflow: auto;
+}
+.elemen {
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  margin: 0.5rem;
+  background-color: rgb(99, 121, 20);
+  border-radius: 15px;
+  font-size: 1.8rem;
+  line-height: 4rem;
+}
+.uno {
+  line-height: 5rem;
+  font-size: 3rem;
+}
+.dos {
+  padding-top: 1.5rem;
+  line-height: 5rem;
+  font-size: 3rem;
+}
+.contenedor4 {
+  background-color: rgb(218, 218, 178);
+  height: 600px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+  overflow: auto;
+}
+.eleme {
+  text-align: center;
+  width: 100px;
+  /* height: 100px; */
+  margin: 0.5rem;
+  background-color: rgb(99, 121, 20);
+  border-radius: 15px;
+  font-size: 1.8rem;
+  line-height: 4rem;
+}
+.flex-container {
+  display: flex;
+  background-color: #f1f1f1;
+}
+.flex-container > div {
+  background-color: dodgerblue;
+  color: white;
+  width: 100px;
+  margin: 0.5rem;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 5rem;
+}
+div .orden {
+  background-color: red;
+  order: 1;
+}
+div .orden2 {
+  background-color: black;
+  order: 2;
+}
+div .grow {
+  flex-grow: 1;
+  background-color: red;
+}
+div .grow2 {
+  flex-grow: 2;
+  background-color: black;
+}
+div.shrink {
+  flex-shrink: 2;
+  background-color: rgb(99, 121, 20);
+}
+div.shrink2 {
+  flex-shrink: 4;
+  background-color: blueviolet;
+}
+div.basis {
+  flex-basis: 350px;
+}
+div.paraladiv2 {
+  flex: 0 3 200px;
+}
+div.paraladiv3 {
+  flex: 2 1;
+  background-color: aquamarine;
+}

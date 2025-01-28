@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularios con HTML5</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+  <h1>Formularios con HTML5</h1>
+  <h3>Contacta con nosotros</h3>
+
+  <form action="https://formsubmit.co/kalvarezzambrano@gmail.com" method="post" autocomplete>
+
+    <fieldset>
+      <legend>Datos personales</legend>
+      <div>
+        <label for="nombre y apellidos">Nombre y apellidos</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Nombre y apellidoss" autofocus required
+          pattern="^[A-ZÀ]{1}[a-zA-ZÀ-ÿ\u00f1\u00d1\s]{2,40}$" />
+      </div>
+      <div>
+        <label for="telefono">Teléfono</label>
+        <input type="text" name="telefono" id="telefono" pattern="\d{9,11}">
+        <br /><br />
+      </div>
+      <div>
+        <label for="correo">Correo electrónico</label>
+        <input type="email" name="correo" id="correo" required
+          pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,9}">
+      </div>
+      <div>
+        <label for="edad">Fecha de nacimiento</label>
+        <input type="date" name="edad" id="edad">
+      </div>
+      <div>
+        <label for="sexo">Indica tu sexo</label>
+        <input type="radio" name="sexo" id="sexo" value="Mujer" checked />Mujer
+        <input type="radio" name="sexo" id="sexo" value="Hombre" />Hombre
+        <input type="radio" name="sexo" id="sexo" value="No binario" />No binario
+      </div>
+    </fieldset>
+    <br />
+    <fieldset>
+      <legend>Datos profesionales y preferencias</legend>
+      <div>
+        <label for="idioma">Idioma materno</label>
+        <select name="idioma" id="idioma" required>
+          <option value="" selected>Elige una opción</option>
+          <option value="es">Español</option>
+          <option value="en">Inglés</option>
+          <option value="fr">Alemán</option>
+          <option value="gall">Gallego</option>
+        </select>
+      </div>
+      <div>
+        <label for="lenguajes">Selecciona los lenguajes de programación que conozcas</label>
+        <select name="lenguajes" id="lenguajes" required multiple>
+          <option value="" selected>Elige una opción</option>
+          <option value="js">JavaScript</option>
+          <option value="php">Php</option>
+          <option value="java">Java</option>
+          <option value="c++">C++</option>
+        </select>
+      </div>
+      </select>
+    </fieldset>
+    <br />
+    <fieldset>
+      <div>
+        <p for="hobbies">Aficiones</p>
+        <label for="deportes">Deportes</label>
+        <input type="checkbox" name="Aficiones" id="deportes" value="deportes" />
+        <label for="Salud">Salud</label>
+        <input type="checkbox" name="Aficiones" id="Salud" value="Salud" />
+        <label for="Finanzas">Finanzas</label>
+        <input type="checkbox" name="Aficiones" id="Finanzas" value="Finanzas" />
+        <label for="Política">Política</label>
+        <input type="checkbox" name="Aficiones" id="Política" value="Política" />
+
+
+
+
+      </div>
+    </fieldset>
+    <br />
+    <fieldset>
+      <div>
+        <label for="cv">Sube tu currículum vitae</label>
+        <input type="file" name="cv" id="cv" value="cv" accept=".doc,.pdf,.jpg" />
+      </div>
+    </fieldset>
+    <br />
+    <fieldset>
+      <div>
+        <label for="">Explicanos en que podemos ayudarte</label>
+        <textarea name="consulta" id="consulta"></textarea>
+      </div>
+    </fieldset>
+    <br />
+    <fieldset>
+      <legend>Gestión de datos</legend>
+      <input type="reset" value="Restablecer">
+      <!-- <button type="reset">Restablecer</button> -->
+      <input type="submit" value="Enviar">
+      <!-- <button type="submit">Enviar</button> -->
+    </fieldset>
+  </form>
+  <p><a href="../index.html">Volver al home</a></p>
+</body>
+
+</html>

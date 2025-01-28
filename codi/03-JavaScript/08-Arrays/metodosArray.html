@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let hombres = ["Pablo", "Jose"];
+    console.log(hombres);
+    let mujeres = ["Lucia", "Gemma", "Zelda"];
+    console.log(hombres);
+
+    let copiah = hombres.slice();
+    console.log(copiah);
+    let copiam = mujeres.slice();
+    console.log(copiam);
+
+    let humanos = hombres.concat(mujeres);
+    let humanas = mujeres.concat(hombres);
+    console.log(humanos);
+    console.log(humanas);
+
+    console.log(hombres.lastIndexOf("Pablo"));
+    console.log(humanas.lastIndexOf("Zelda"));
+
+    humanos.push("William");
+    console.log(humanos);
+    hombres.push("William");
+    console.log(hombres);
+    console.log(humanos);
+    humanos = hombres.concat(mujeres);
+    console.log(humanos);
+    console.log(humanos.pop());
+
+    console.log(humanos.pop());
+    console.log(humanos);
+    console.log(hombres);
+    console.log(mujeres);
+
+
+  </script>
+</body>
+
+</html>
