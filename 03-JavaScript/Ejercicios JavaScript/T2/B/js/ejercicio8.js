@@ -2,7 +2,7 @@
 document.title = `${ntitulo}`; */
 
 document.querySelector("#principal").style.backgroundColor = "gray";
-document.querySelector("#principal").style.color = "green";
+document.querySelector("#principal").style.color = "white";
 
 function activar() {
   const ancho = screen.width;
@@ -55,3 +55,21 @@ function boton() {
     document.querySelector("#result").innerHTML = valor;
   }
 }
+
+function caracteres() {
+  const texto1 = document.getElementById("frase").value;
+  console.log(texto1);
+  const resultado = texto1.length;
+  console.log(resultado);
+  document.querySelector("#result1").innerHTML = resultado;
+}
+
+/* function caracteres() {}
+
+function caracteres() {}
+
+function caracteres() {}
+
+function caracteres() {}
+
+function caracteres() {} */

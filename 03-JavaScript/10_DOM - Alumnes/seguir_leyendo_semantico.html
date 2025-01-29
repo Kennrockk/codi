@@ -50,19 +50,19 @@
 
 
   <script>
-    const elemento = document.querySelector('#adicional');
-    const enlace1 = document.querySelector('#enlace1');
+    const elemento = document.querySelector('#adicional'); // Seleccionamos el elemento a mostrar/ocultar
+    const enlace1 = document.querySelector('#enlace1'); // Seleccionamos el enlace que muestra/oculta el elemento
 
-    const muestra = () => {
-      elemento.classList.toggle('visible');
-      if (enlace1.innerHTML === 'Seguir leyendo') {
-        enlace1.innerHTML = 'Ocultar contenido';
-      } else {
-        enlace1.innerHTML = 'Seguir leyendo';
+    const muestra = () => { // Función que muestra u oculta el elemento
+      elemento.classList.toggle('visible'); // Alterna entre las clases 'visible' y 'oculto'
+      if (enlace1.innerHTML === 'Seguir leyendo') { // Si cambia el texto del enlace:
+        enlace1.innerHTML = 'Ocultar contenido'; // Si el texto es 'Seguir leyendo', lo cambia a 'Ocultar contenido'
+      } else { // Si no:
+        enlace1.innerHTML = 'Seguir leyendo'; // Cambia el texto a 'Seguir leyendo'
       }
     };
 
-    enlace1.addEventListener('click', muestra);
+    enlace1.addEventListener('click', muestra); // Añadimos un evento 'click' al enlace que ejecuta la función 'muestra'
 
   </script>
 </body>

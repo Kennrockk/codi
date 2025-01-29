@@ -21,44 +21,44 @@
   </main>
 
   <script>
-    const posicion = document.querySelector('#posicion');
-    const texto = document.querySelector('#valor');
-    const padre = document.querySelector('#contenedorPadre');
-    const creaParrafos = () => {
-      let pos = posicion.value;
-      let text = texto.value;
-      let hijos = padre.children.length;
+    const posicion = document.querySelector('#posicion'); // Seleccionamos el input de la posición
+    const texto = document.querySelector('#valor'); // Seleccionamos el input del texto
+    const padre = document.querySelector('#contenedorPadre'); // Seleccionamos el contenedor padre
+    const creaParrafos = () => { // Función que crea los párrafos
+      let pos = posicion.value; // Obtenemos el valor de la posición
+      let text = texto.value; // Obtenemos el valor del texto
+      let hijos = padre.children.length; // Obtenemos la cantidad de hijos del contenedor padre
 
-      let elementoNodo = document.createElement('p');
-      let nodoTexto = document.createTextNode(text);
-      let id = hijos + 1;
-      elementoNodo.appendChild(nodoTexto);
-      elementoNodo.setAttribute("id", id);
-      if (hijos === 0 && text !== '') {
-        padre.appendChild(elementoNodo);
-      } else if (text === '') {
-        alert('Introduce un texto');
-        document.querySelector('#valor').focus();
-      } else {
-        if (pos) {
-          if (pos <= hijos) {
-            for (i = 0; i < hijos; i++) {
-              if (i === pos + 1) {
-                let actual = document.querySelector(padre.children[i]);
-                padre.insertBefore(elementoNodo, actual);
+      let elementoNodo = document.createElement('p'); // Creamos un elemento párrafo
+      let nodoTexto = document.createTextNode(text); // Creamos un nodo de texto. Un nodo de texto es un objeto que representa el contenido textual de un elemento.
+      let id = hijos + 1; // Creamos un id para el párrafo
+      elementoNodo.appendChild(nodoTexto); // Añadimos el nodo de texto al párrafo
+      elementoNodo.setAttribute("id", id); // Añadimos un atributo id al párrafo
+      if (hijos === 0 && text !== '') { // Si no hay hijos y el texto no está vacío:
+        padre.appendChild(elementoNodo); // Añadimos el párrafo al contenedor padre
+      } else if (text === '') {   // Si el texto está vacío:
+        alert('Introduce un texto'); // Muestra un mensaje de alerta
+        document.querySelector('#valor').focus(); // Selecciona el input del texto y le da el foco
+      } else { // Si hay hijos y el texto no está vacío:
+        if (pos) { // Si la posición no está vacía:
+          if (pos <= hijos) { // Si la posición es menor o igual a la cantidad de hijos:
+            for (i = 0; i < hijos; i++) { // Recorremos los hijos del contenedor padre
+              if (i === pos + 1) { // Si el índice es igual a la posición más uno:
+                let actual = document.querySelector(padre.children[i]); // Seleccionamos el hijo en la posición actual
+                padre.insertBefore(elementoNodo, actual); // Insertamos el párrafo antes del hijo en la posición actual
               }
             }
-          } else if (parseInt(parseInt(pos) - hijos) <= 1) {
-            padre.appendChild(elementoNodo);
+          } else if (parseInt(parseInt(pos) - hijos) <= 1) { // Si la posición menos la cantidad de hijos es menor o igual a 1:
+            padre.appendChild(elementoNodo); // Añadimos el párrafo al contenedor padre
           }
-        } else {
-          alert('Introduce la posición.');
-          posicion.focus();
+        } else { // Si la posición está vacía:
+          alert('Introduce la posición.'); // Muestra un mensaje de alerta
+          posicion.focus(); // Selecciona el input de la posición y le da el foco
         }
       }
     };
-    const crear = document.querySelector('#crear');
-    crear.addEventListener('click', creaParrafos);
+    const crear = document.querySelector('#crear'); // Seleccionamos el botón de crear
+    crear.addEventListener('click', creaParrafos); // Añadimos un evento 'click' al botón que ejecuta la función 'creaParrafos'
   </script>
 </body>
 

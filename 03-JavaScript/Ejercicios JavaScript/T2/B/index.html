@@ -6,29 +6,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hola</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styleB.css">
 </head>
 
-<body class="w-50 p-3 mx-auto p-2" id="principal">
+<body class="w-50 p-3 mx-auto p-2 text-center" id="principal">
 
-  <h1 class="">Ejercicios T2B</h1>
-  <div class="">
+  <h1>Ejercicios T2B</h1>
+  <hr />
+  <div>
     <button class="btn btn-primary" onclick="activar()">Muestra las características de la
       pantalla</button>
     <div id="tabla"></div>
   </div>
+  <hr />
   <button class="btn btn-primary" onclick="abrirp()">Abre una nueva ventana</button>
   <button class="btn btn-primary" onclick="cerrarp()">Cierra la nueva ventana</button>
+  <hr />
   <div class="">
-    <label class="form-label" for="text">Escribe una frase de mas de 10 carácteres</label>
+    <label class="form-label" for="text">Escribe una frase de mas de 10 carácteres:</label>
     <input type="text" id="nom" name="nombre" class="form-control mb-5">
     <button class="btn btn-primary" onclick="boton();">Ejecutar Ejercicio</button>
     <div id="result" class="alert alert-success" role="alert">
     </div>
   </div>
+  <hr />
+  <div>
+    <label class="form-label" for="text">Escribe una frase:</label>
+    <input type="text" id="frase" name="frase" class="form-control mb-5">
+
+
+    <div class="bt"><button class="btn btn-primary btn-sm mb-3 me-3" onclick="caracteres()">Número de
+        carácteres</button>
+      <div id="result1" class="alert alert-success w-25 p-3" role="alert">
+      </div>
+    </div>
+
+
+    <div class="bt"><button class="btn btn-primary btn-sm mb-3 me-3" onclick="abrirp()">Número de carácteres</button>
+      <div id="result2" class="alert alert-success w-25 p-3" role="alert">
+      </div>
+    </div>
+
+
+    <div class="bt"><button class="btn btn-primary btn-sm mb-3 me-3" onclick="abrirp()">Número de carácteres</button>
+      <div id="result3" class="alert alert-success w-25 p-3" role="alert">
+      </div>
+    </div>
+
+
+    <div class="bt"><button class="btn btn-primary btn-sm mb-3 me-3" onclick="abrirp()">Número de carácteres</button>
+      <div id="result4" class="alert alert-success w-25 p-3" role="alert">
+      </div>
+    </div>
+
+
+    <div class="bt"><button class="btn btn-primary btn-sm mb-3 me-3" onclick="abrirp()">Número de carácteres</button>
+      <div id="result5" class="alert alert-success w-25 p-3" role="alert">
+      </div>
+    </div>
+
+
+    <div class="bt"><button class="btn btn-primary btn-sm mb-3 me-3" onclick="abrirp()">Número de carácteres</button>
+      <div id="result6" class="alert alert-success w-25 p-3" role="alert">
+      </div>
+    </div>
 
 
 
-  <script src="js/ejercicio8.js"></script>
+    <script src="js/ejercicio8.js"></script>
 </body>
 
 </html>
