@@ -52,20 +52,21 @@ function boton() {
   const texto = document.getElementById("nom").value;
   const valor = texto.substr(-5, 5);
   if (texto.length > 10) {
-    document.querySelector("#result").innerHTML = valor;
+    document.querySelector("#result0").innerHTML = valor;
   }
 }
 
-function caracteres() {
-  const texto1 = document.getElementById("frase").value;
-  console.log(texto1);
-  const resultado = texto1.length;
-  console.log(resultado);
-  document.querySelector("#result1").innerHTML = resultado;
+caracteres = () => {
+  const texto = document.getElementById("frase").value;
+  document.querySelector("#result1").innerHTML = texto.length;
+};
+
+function cursiva() {
+  const texto = document.getElementById("frase").value;
+  document.querySelector("#result2").innerHTML = `<i>${texto}</i>`;
 }
 
-/* function caracteres() {}
-
+/*
 function caracteres() {}
 
 function caracteres() {}
