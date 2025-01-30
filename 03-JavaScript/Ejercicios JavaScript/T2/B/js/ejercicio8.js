@@ -66,11 +66,62 @@ function cursiva() {
   document.querySelector("#result2").innerHTML = `<i>${texto}</i>`;
 }
 
-/*
-function caracteres() {}
+function negrita() {
+  const texto = document.getElementById("frase").value;
+  document.querySelector("#result3").innerHTML = `<strong>${texto}</strong>`;
+}
 
-function caracteres() {}
+function rojo() {
+  const texto = document.getElementById("frase").value;
+  document.querySelector(
+    "#result4"
+  ).innerHTML = `<p style="color: red">${texto}</p>`;
+}
 
-function caracteres() {}
+function grande() {
+  const texto = document.getElementById("frase").value;
+  document.querySelector(
+    "#result5"
+  ).innerHTML = `<p style="font-size: 35px">${texto}</p>`;
+}
+let boton1 = document.querySelector("#btnn");
+boton1.addEventListener("click", function () {
+  const texto = document.getElementById("frase").value;
+  const resultado = texto
+    .replace(/a/g, "á")
+    .replace(/A/g, "Á")
+    .replace(/e/g, "é")
+    .replace(/E/g, "É")
+    .replace(/i/g, "í")
+    .replace(/I/g, "Í")
+    .replace(/o/g, "ó")
+    .replace(/O/g, "Ó")
+    .replace(/u/g, "ú")
+    .replace(/U/g, "Ú");
+  document.querySelector("#result6").innerHTML = resultado;
+});
 
-function caracteres() {} */
+function tabla2() {
+  let ta = `<table class ="tb">  
+    <tbody>
+      <tr>
+        <td contenteditable>HOLA</td>
+        <td contenteditable>ADIOS</td>
+      </tr>
+      <tr>
+        <td contenteditable>BUENOS DIAS</td>
+        <td contenteditable>BUENAS NOCHES</td>
+      </tr>
+    </tbody>
+  </table>`;
+  document.querySelector("#t").innerHTML = ta;
+}
+
+function area() {
+  const base = document.getElementById("base").value;
+  const altura = document.getElementById("altura").value;
+  const area = (base * altura) / 2;
+  document.querySelector(
+    "#result7"
+  ).innerHTML = `El área del triangulo es base(${base}) multiplado por altura(${altura}) y el resultado dividido por 2, lo que nos da como resultado = ${area}`;
+}
