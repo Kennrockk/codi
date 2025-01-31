@@ -125,3 +125,12 @@ function area() {
     "#result7"
   ).innerHTML = `El área del triangulo es base(${base}) multiplado por altura(${altura}) y el resultado dividido por 2, lo que nos da como resultado = ${area}`;
 }
+
+function bombillaencendida() {
+  const bomb = document.getElementById("bombilla");
+  if (bomb.src.includes("img/apagada.gif")) {
+    bomb.src = "img/encendida.gif";
+  } else {
+    bomb.src = "img/apagada.gif";
+  }
+}
