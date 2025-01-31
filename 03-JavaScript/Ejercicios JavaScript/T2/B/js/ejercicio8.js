@@ -134,3 +134,20 @@ function bombillaencendida() {
     bomb.src = "img/apagada.gif";
   }
 }
+function mayas() {
+  let maya = new Date("2012-12-21T12:12");
+  let actual = new Date();
+  let milisegundos = actual - maya;
+  document.querySelector(
+    "#result8"
+  ).innerHTML = `Han pasado ${milisegundos} milisegundos desde el 21 de diciembre de 2012.`;
+}
+
+function milisegundos() {
+  const fechaActual = new Date();
+  console.log(fechaActual);
+  const milisegundos = fechaActual.valueOf();
+  document.querySelector(
+    "#result9"
+  ).innerHTML = `Han pasado ${milisegundos} milisegundos desde el 1 de enero de 1970.`;
+}
