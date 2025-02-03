@@ -1,9 +1,10 @@
+let nombre = document.getElementById("inputNombre").value;
+let telefono = document.getElementById("inputTelef").value;
+let fecha = document.getElementById("inputFecha").value;
+let email = document.getElementById("inputEmail").value;
+let dni = document.getElementById("inputDNI").value;
+
 document.getElementById("form").addEventListener("submit", function (e) {
-  let nombre = document.getElementById("inputNombre").value;
-  let telefono = document.getElementById("inputTelef").value;
-  let fecha = document.getElementById("inputFecha").value;
-  let email = document.getElementById("inputEmail").value;
-  let dni = document.getElementById("inputDNI").value;
   let aceptaCondiciones = document.getElementById("aceptaCondiciones");
   let mensaje = document.getElementById("mensaje");
   let esValido = true;
@@ -71,6 +72,39 @@ function validarDNI(dni) {
   return d.test(dni);
 }
 
+document.getElementById("guardarDatos").addEventListener("click", () => {
+  setCookie("Nombre", nombre, 1);
+  setCookie("Telefono", telefono, 1);
+  setCookie("Fecha", fecha, 1);
+  setCookie("Email", email, 1);
+  setCookie("Dni", dni, 1);
+});
+
+document.getElementById("recuperarDatos").addEventListener("click", () => {
+  document.getElementById("inputNombre").value = getCookie("Nombre");
+  document.getElementById("inputTelef").value = getCookie("Telefono");
+  document.getElementById("inputFecha").value = getCookie("Fecha");
+  document.getElementById("inputEmail").value = getCookie("Email");
+  document.getElementById("inputDNI").value = getCookie("Dni");
+});
+
+function setCookie(cname, cvalue, exdays) {
+  let d = new Date();
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+  }
+  return "";
+}
+
 let inputs = document.getElementsByTagName("input");
 for (let i = 0; i < inputs.length; i++) {
   if (inputs[i].type === "text" || inputs[i].type === "date") {
@@ -101,3 +135,11 @@ function validarCampo(id, valor) {
   }
   return false;
 }
+
+document.getElementById("borrarDatos").addEventListener("click", () => {
+  let con = window.confirm("estás segro que deseas borrar todo?");
+  if (!con) {
+    return;
+  }
+  document.getElementById("form").reset();
+});
