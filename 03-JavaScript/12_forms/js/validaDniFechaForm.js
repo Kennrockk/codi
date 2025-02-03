@@ -10,6 +10,7 @@ formu.addEventListener("submit", (e) => {
   const myedad = c_edad();
 
   if (!mydni || !myedad) {
+    // Si no se cumple alguna de las condiciones, se muestra un mensaje de error. las condiciones son que el dni sea válido y que la edad sea mayor de 18 años y menor de 100 años.
     e.preventDefault();
     error.innerHTML =
       "ERRORUM. No se ha podido enviar el formulario. Por favor, revisa que todos los campos estén rellenados correctamente.";

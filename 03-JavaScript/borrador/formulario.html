@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <h1>Formulario de Registro</h1>
+    <form id="form">
+      <!-- Camp per al nom -->
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="inputNombre" />
+      <br /><br />
+
+      <!-- Camp per al telèfon -->
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="inputTelef" />
+      <br /><br />
+
+      <!-- Camp per a la data de naixement -->
+      <label for="dia">Dia de nacimiento:</label>
+      <input type="text" id="inputDia" placeholder="DD" />
+
+      <label for="mes">Mes:</label>
+      <input type="text" id="inputMes" placeholder="MM" />
+
+      <label for="ano">Any:</label>
+      <input type="text" id="inputAno" placeholder="AAAA" />
+      <br /><br />
+
+      <!-- Camp per a l'email -->
+      <label for="email">Email:</label>
+      <input type="text" id="inputEmail" />
+      <br /><br />
+
+      <!-- Camp per al DNI/NIE -->
+      <label for="dni">DNI/NIE:</label>
+      <input type="text" id="inputDNI" />
+      <br /><br />
+
+      <!-- Checkbox per acceptar les condicions -->
+      <label for="condiciones">Acepto las condiciones:</label>
+      <input type="checkbox" id="aceptaCondiciones" />
+      <br /><br />
+
+      <!-- Àrea de text per mostrar mensajes -->
+      <label for="mensaje">Mensajes:</label><br />
+      <textarea id="mensaje" readonly></textarea>
+      <br /><br />
+
+      <!-- Botons per guardar, recuperar dades i enviar el formulari -->
+      <button type="button" id="guardarDatos">Guardar datos</button>
+      <button type="button" id="recuperarDatos">Recuperar datos</button>
+      <button type="submit" id="registrar">Regístrate</button>
+    </form>
+
+    <!-- Enllaç al fitxer JavaScript -->
+    <script src="formulario.js"></script>
+  </body>
+</html>

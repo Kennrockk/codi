@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../../02_uso_frameworks/bootstrap/sources/css/bootstrap.css"
+    />
+    <title>Actividad T4 | Formulario de registro</title>
+  </head>
+  <body
+    class="container mt-5 bg-light p-3 rounded shadow p-3 mb-5 bg-white rounded text-center"
+  >
+    <h1>Formulario de registro</h1>
+    <br /><br />
+    <form id="form">
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="inputNombre" />
+      </div>
+      <br /><br />
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="inputTelef" />
+      <br /><br />
+      <label for="dia">Fecha de nacimiento:</label>
+      <input type="date" id="inputFecha" placeholder="DD" />
+      <br /><br />
+      <label for="email">Email:</label>
+      <input type="text" id="inputEmail" />
+      <br /><br />
+      <label for="dni">DNI/NIE:</label>
+      <input type="text" id="inputDNI" />
+      <br /><br />
+      <label for="condiciones">Acepto las condiciones:</label>
+      <input type="checkbox" id="aceptaCondiciones" />
+      <br /><br />
+      <label for="mens">Alertas de la página:</label>
+      <textarea class="form-control" id="mensaje" readonly></textarea>
+      <br /><br />
+      <button class="btn btn-secondary" type="button" id="guardarDatos">
+        Guardar datos
+      </button>
+      <button class="btn btn-primary" type="button" id="recuperarDatos">
+        Recuperar datos
+      </button>
+      <button class="btn btn-success" type="submit" id="registrar">
+        Regístrate
+      </button>
+    </form>
+    <script src="form.js"></script>
+  </body>
+</html>
