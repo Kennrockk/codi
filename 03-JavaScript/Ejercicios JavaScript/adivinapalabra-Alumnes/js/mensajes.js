@@ -6,7 +6,6 @@ const msg = [
   `Enhorabuena! Encontraste la palabra "${palabra.toUpperCase()}".  Un gallifante para ti!!`,
   `Enhorabuena! Encontraste la palabra "${palabra.toUpperCase()}".  Has ganado un chorizo poco chupado`,
 ];
-console.log(msg.length);
 const msgError = [
   `Has fallado. La palabra correcta era "${palabra.toUpperCase()}". Esto es demasiado para un... como tú`,
   `Has fallado OTRA VEZ!!!. La palabra correcta era "${palabra.toUpperCase()}". Deberías dedicar tu tiempo a otras cosas`,
