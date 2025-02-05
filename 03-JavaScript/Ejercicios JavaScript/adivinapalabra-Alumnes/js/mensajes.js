@@ -1,5 +1,5 @@
-const indice = Math.floor(Math.random() * listado.length);
-let pSecreta = listado[indice].palabra;
+let indice = Math.floor(Math.random() * listado.length);
+const pSecreta = listado[indice].palabra;
 
 const msg = [
   `Enhorabuena! Encontraste la palabra "${pSecreta.toUpperCase()}". Has ganado, pero en realidad has perdido (tu tiempo)`,
