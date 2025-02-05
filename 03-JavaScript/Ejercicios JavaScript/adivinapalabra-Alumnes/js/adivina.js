@@ -82,3 +82,8 @@ cReinicio.addEventListener("click", function () {
 });
 
 empezarJuego();
+
+function contraste() {
+  let btncontraste = document.querySelector("#contras");
+  btncontraste.classList.toggle("bg-ligth-negro");
+}
