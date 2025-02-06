@@ -18,6 +18,7 @@ function empezarJuego() {
   pista = listado[indice].pista;
   for (let i = 0; i < pSecreta.length; i++) {
     const Div = document.createElement("div");
+    Div.id = "oscuro";
     Div.className = "letras";
     cPalabra.appendChild(Div);
   }
@@ -26,7 +27,6 @@ function empezarJuego() {
   } else {
     intentos = 6;
   }
-
   cPista.textContent = pista;
   cIntentos.textContent = intentos;
   cErrores.textContent = "";
@@ -84,6 +84,13 @@ cReinicio.addEventListener("click", function () {
 empezarJuego();
 
 function contraste() {
-  let btncontraste = document.querySelector("#contras");
-  btncontraste.classList.toggle("bg-ligth-negro");
+  let bodyContraste = document.querySelector("#contras");
+  let mainContraste = document.querySelector("#maincontrast");
+  let divContraste = document.querySelectorAll("#oscuro");
+  for (let p = 0; p < divContraste.length; p++) {
+    divContraste[p].classList.toggle("divoscuro");
+  }
+
+  bodyContraste.classList.toggle("oscuro");
+  mainContraste.classList.toggle("mainOscuro");
 }
