@@ -11,21 +11,35 @@
 
 <body id="contras" class="bg-ligth claro">
   <main id="maincontrast" class="container mt-5 w-50 p-3 rounded shadow claro">
-    <!-- <button id="btncontraste" class="btn-cambio" onclick="contraste()">color</button> -->
+
     <div class="accesibilidad">
       <svg class="s" id="soscuro" onclick="contraste()" xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
         <path
           d="M448 256c0-106-86-192-192-192l0 384c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z" />
       </svg>
+      <button class="btnzoom" id="font-up">
+        <svg class="zoom" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+        </svg>
+      </button>
+      <button class="btnzoom" id="font-down">
+        <svg class="zoom" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" />
+        </svg>
+      </button>
     </div>
     <h1 class="text-center mb-4">Palabra a adivinar</h1>
 
 
-    <div class="content text-center">
+    <div id="inp" class="content text-center">
       <input type=" text" class="lletra claro form-control mb-3" maxlength="1" />
 
-      <div class="inputs gap-2 mb-4"></div>
+      <div id="inp1" class="inputs gap-2 mb-4"></div>
 
       <hr id="linea" />
 
@@ -36,7 +50,7 @@
       </div>
       <div class="mostra mb-5"></div>
       <div id="boton">
-        <button id="btncontrast" class="btn reset-btn colorbtn">Adivinar Palabra</button>
+        <button id="btncontrast" class="colorbtn">Adivinar Palabra</button>
       </div>
     </div>
 
@@ -46,5 +60,6 @@
   <script src="js/mensajes.js"></script>
   <script src="js/adivina.js"></script>
 </body>
+<img src="" title="" alt="">
 
 </html>
