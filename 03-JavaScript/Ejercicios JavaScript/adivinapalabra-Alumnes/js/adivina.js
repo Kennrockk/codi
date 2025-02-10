@@ -77,7 +77,7 @@ function victoria() {
   }
 }
 
-cReinicio.addEventListener("click", function () {
+cReinicio.addEventListener("click", () => {
   location.reload();
 });
 

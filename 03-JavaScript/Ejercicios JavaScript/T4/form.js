@@ -57,9 +57,15 @@ function validarTelefono(telefono) {
 
 function validarFecha(fecha) {
   let nacimiento = new Date(fecha);
+  console.log(nacimiento);
   let fechaActual = new Date();
+  console.log(fechaActual);
   let edad = fechaActual.getFullYear() - nacimiento.getFullYear();
-  return edad >= 18;
+  if (edad >= 18 && edad < 100) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function validarEmail(email) {
@@ -68,7 +74,7 @@ function validarEmail(email) {
 }
 
 function validarDNI(dni) {
-  let d = /^[XYZ]?\d{7,8}[A-Za-z]$/;
+  let d = /^[XYZ]?\d{5,8}[A-Za-z]$/;
   return d.test(dni);
 }
 

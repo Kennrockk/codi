@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    html {
+      font-family: "sans-serif";
+    }
+
+    body {
+      margin: 0
+    }
+
+    .botonera {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-family: sans-serif;
+      padding: 80px 0;
+      background: aliceblue;
+    }
+
+    .botonera button {
+      width: 3rem;
+      height: 3rem;
+      border: 1px solid red;
+      text-align: center;
+      padding: 8px;
+      margin: 0 4px;
+      font-size: 2rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .botonera button:hover {
+      background: red;
+      color: white;
+      cursor: pointer
+    }
+
+    .botonera button.usada {
+      background: white;
+      color: lightgray;
+      cursor: none;
+      border-color: #ff000085;
+    }
+
+    .panel {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 80px auto;
+    }
+
+    .panel .fila {
+      display: flex;
+    }
+
+    .letra,
+    .espacio {
+      padding: 10px;
+      margin: 8px 4px;
+      font-size: 1.8rem;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .letra {
+      border: 1px solid black;
+    }
+
+    .espacio {
+      border: none;
+      background: transparent;
+    }
+
+    @keyframes girar {
+      0% {
+        transform: rotateY(180deg);
+        color: transparent;
+      }
+
+      49% {
+        color: transparent;
+      }
+
+      51% {
+        color: black;
+      }
+
+      100% {
+        transform: rotateY(0deg);
+      }
+    }
+
+    .oculto {
+      color: transparent;
+      transform: rotateY(180deg);
+    }
+
+    .visible {
+      animation: girar 500ms linear forwards;
+    }
+
+    .respuesta {
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 80px
+    }
+
+    .respuesta textarea {
+      width: 75vw;
+      height: 4rem;
+    }
+
+    .modal {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: fit-content;
+      height: fit-content;
+      background: white;
+      color: red;
+      padding: 40px;
+      border: 1px solid red;
+      border-radius: 25px;
+      box-shadow: 10px 10px 15px 5px lightgray;
+      transform: scale(0);
+      transition: transform 500s linear;
+    }
+
+    .modal.abierta {
+      display: block;
+      transform: scale(1)
+    }
+
+    .modal.cerrada {
+      transform: scale(0);
+      display: none
+    }
+
+    #button {
+      font-size: 1.5rem;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 15px
+    }
+
+    #button:hover {
+      background-color: #ff000091;
+      color: #1f1d1d;
+      box-shadow: 0 0 5px 5px #f6cfcf;
+    }
+  </style>
+  <div class="botonera">
+    <button>A</button><button>B</button><button>C</button><button>D</button><button>E</button><button>F</button><button>G</button><button>H</button><button>I</button><button>J</button><button>K</button><button>L</button><button>M</button><button>N</button><button>Ñ</button><button>O</button>
+    <button>P</button><button>Q</button><button>R</button><button>S</button>
+    <button>T</button><button>U</button><button>V</button><button>W</button>
+    <button>X</button><button>Y</button><button>Z</button>
+  </div>
+  <div class="panel"></div>
+  <div class="respuesta">
+    <form action="" onsubmit="return verificar()">
+      <h2>¡Ya lo se !</h2>
+      <textarea id="respuesta" placeholder="Escribe tu respuesta"></textarea><br>
+      <input type="submit" name="button" id="button" value=" Comprobar ">
+    </form>
+  </div>
+  <div class="modal cerrada">
+    <h1>Muy bien: Correcto</h1>
+  </div>
+  <script>
+    //Definiciones iniciales
+    !function init() {
+      const frases = [];
+      let elegida = 0, fraseActual;
+      let panel, cols, filas;
+      const anchoLetra = 65;
+      //anchoLetra es el ancho que tienen los paneles de las letras  (CSS)
+      //Frases posibles para acertar, las vocales no llevan acentos
+      //No distingue entre mayúsuclas y minúsculas
+      frases[0] = "Cuando el viento sopla airado, no hay paz en ningun lado";
+      frases[1] = "En abril espigas mil, en mayo espigas y grano";
+      frases[2] = "Cuando llueve y hace sol, baila el perro y el pastor";
+      elegida = Math.floor(Math.random() * (frases.length))
+      fraseActual = frases[elegida];
+      //El contenedro del tablero de letras es un div con class panel 
+      //Guardo la frase en una propiedad añadida (frase) 
+      panel = document.querySelector(".panel");
+      panel.frase = fraseActual;
+      //numero de columnas para evitar ruptura de palabras
+      cols = Math.floor(panel.offsetWidth / anchoLetra);
+      filas = wrap(fraseActual, cols);
+      //Añadir una fila por cada segmento de la frase formateada al panel
+      filas.forEach(creaFila, panel)
+      //Asigna evento a los botones de las letras.
+      let botonera = document.querySelector(".botonera");
+      botonera.addEventListener('click', seleccionar)
+      //FUNCIONES
+      //crea fila con bloques div para las letras
+      //usa this para el panel que contiene todas las filas
+      function creaFila(cadena) {
+        let fila = document.createElement('div');
+        let divLetra;
+        fila.classList.add('fila');
+        for (let i = 0; i < cadena.length; i++) {
+          divLetra = document.createElement('div');
+          if (cadena[i] == ' ') {
+            divLetra.classList.add('espacio');
+            divLetra.innerHTML = "&nbsp;";
+          }
+          else {
+            divLetra.classList.add('letra');
+            if (cadena[i].match(/,|\.|;|:|\?|¿|¡|\!/)) {
+              divLetra.innerHTML = cadena[i];
+              divLetra.classList.add('espacio', 'visible');
+            }
+            else {
+              divLetra.innerHTML = cadena[i].toUpperCase();
+              divLetra.classList.add('oculto');
+            }
+          }
+          fila.appendChild(divLetra);
+        }
+        this.appendChild(fila);
+      }
+      //Parte la frase en secciones para no tener que romper palabras
+      //ancho es la anchura máxima del bloque que contendrá la frase
+      function wrap(frase, ancho) {
+        let filas;
+        let palabras = frase.split(' ');
+        filas = palabras.reduce((pal, act) => {
+          if (pal.length == 0) {
+            pal[0] = act
+          }
+          else {
+            if (pal[pal.length - 1].length + act.length < ancho) {
+              pal[pal.length - 1] += ' ' + act;
+            }
+            else {
+              pal.push(act);
+            }
+          }
+          return pal;
+        }, [])
+        return filas;
+      }
+      //Lógica
+      function seleccionar(e) {
+        let tecla = e.target;
+        let panel = document.querySelectorAll('.panel .letra');
+        if (tecla.tagName.toLowerCase() == "button" && !tecla.classList.contains('usada')) {
+          tecla.classList.add('usada');
+          for (let i = 0; i < panel.length; i++) {
+            if (panel[i].innerText === tecla.innerText) {
+              panel[i].classList.replace('oculto', 'visible')
+            }
+          }
+        }
+      }
+    }();
+    function verificar() {
+      let panel = document.querySelector('.panel')
+      let respta = event.target.respuesta.value;
+      if (respta.toUpperCase() === panel.frase.toUpperCase()) {
+        document.querySelector('.modal').classList.replace('cerrada', 'abierta');
+        let letras = document.querySelectorAll('.letra.oculto');
+        for (let i = 0; i < letras.length; i++) {
+          letras[i].classList.replace('oculto', 'visible')
+        }
+      }
+      else {
+        event.target.respuesta.value = "¡Fallaste!: pide más letras";
+      }
+      return false
+    }
+    document.addEventListener('click', () => document.querySelector('.modal').classList.replace('abierta', 'cerrada'));
+  </script>
+</body>
+
+</html>
